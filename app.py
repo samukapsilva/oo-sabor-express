@@ -45,11 +45,10 @@ def main():
     else:
         print(f'O erro foi {response.status_code}')
 
-    for nome_restaurante, dados in dados_restaurante.items():
-        nome_arquivo = f'{nome_restaurante}.json'
+    for nome_restaurante, dados in dados_restaurante.items():   # para cada nome_restaurante(key) em dados_restaurante, pegue os dados (valor)
+        nome_arquivo = f'{nome_restaurante}.json'               # cria o arquivo com o nome do restaurante
         with open(nome_arquivo, 'w') as arquivo_restaurante:
-            json.dump(dados, nome_arquivo, ident=4)
-
+            json.dump(dados, arquivo_restaurante, indent=4)     # escreva os dados no arquivo
 
     #Restaurante.listar_restaurantes()
     #restaurante_praca.exibir_cardapio
